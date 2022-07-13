@@ -5,14 +5,14 @@ env:
 
 window:
   # for notebook
-  dimensions:
-    lines: 39 
-    columns: 158
+  # dimensions:
+  #   lines: 39 
+  #   columns: 158
 
   # for pc
-  # dimensions:
-  #   lines: 49 
-  #   columns: 190
+  dimensions:
+    lines: 49 
+    columns: 190
 
   # position:
   #   x: 0
@@ -79,10 +79,10 @@ font:
     style: Bold Italic
 
   # for notebook
-  size: 16.0
+  # size: 16.0
 
   #for pc
-  # size: 13.0
+  size: 13.0
 
   # offset:
   #   x: 0
