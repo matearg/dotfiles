@@ -598,4 +598,5 @@ key_bindings:
   - { key: NumpadSubtract, mods: Control,                         action: DecreaseFontSize }
 
   # (Windows only)
-  - { key: Return,   mods: Alt,           action: ToggleFullscreen }
+  - { key: Return, mods: Alt,                    action: ToggleFullscreen }
+  - { key: W,      mods: Control, mode: ~Search, action: Quit             }
