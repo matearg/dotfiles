@@ -13,6 +13,7 @@ Set-Alias g git
 Set-Alias gg lazygit
 Set-Alias vim nvim
 Set-Alias v nvim
+Set-Alias at alacritty-themes
 
 # PSReadLine
 Set-PSReadLineOption -PredictionSource History
