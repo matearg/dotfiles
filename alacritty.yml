@@ -9,6 +9,10 @@ window:
     # lines: 49    
     # columns: 190
 
+    # mononoki
+    # lines: 54   
+    # columns: 211
+
     # FantasqueSansMono
     lines: 61 
     columns: 238
@@ -60,9 +64,9 @@ font:
     style: Italic
 
   bold_italic:
-    family: FantasqueSansMono NF
+    # family: FantasqueSansMono NF
     # family: Hasklug NF
-    # family: mononoki NF
+    family: mononoki NF
     # family: SauceCodePro NF
     style: Bold Italic
 
