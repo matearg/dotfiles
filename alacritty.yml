@@ -4,15 +4,14 @@ env:
   TERM: xterm-256color
 
 window:
-  # for notebook
-  # dimensions:
-  #   lines: 39 
-  #   columns: 158
-
-  # for pc
   dimensions:
-    lines: 49 
-    columns: 190
+    # Hasklug, SauceCodePro
+    # lines: 49    
+    # columns: 190
+
+    # FantasqueSansMono
+    lines: 61 
+    columns: 238
 
   # position:
   #   x: 0
@@ -24,8 +23,9 @@ window:
 
   decorations: none
 
-   # The value `0.0` is completely transparent and `1.0` is opaque.
+  # The value `0.0` is completely transparent and `1.0` is opaque.
   opacity: 0.95
+  # opacity: 1.0
   startup_mode: Windowed
   title: Alacritty
   dynamic_title: true
@@ -38,48 +38,33 @@ scrolling:
 
 # Font configuration
 font:
-  # Normal (roman) font face
   normal:
-    # family: FantasqueSansMono NF
+    family: FantasqueSansMono NF
     # family: Hasklug NF
-    # family: Iosevka NF
     # family: mononoki NF
-    family: SauceCodePro NF
-    # family: UbuntuMono NF
+    # family: SauceCodePro NF
     style: Regular
 
-  # Bold font face
   bold:
-    # family: FantasqueSansMono NF
+    family: FantasqueSansMono NF
     # family: Hasklug NF
-    # family: Iosevka NF
     # family: mononoki NF
-    family: SauceCodePro NF
-    # family: UbuntuMono NF
+    # family: SauceCodePro NF
     style: Bold
 
-  # Italic font face
   italic:
-    # family: FantasqueSansMono NF
+    family: FantasqueSansMono NF
     # family: Hasklug NF
-    # family: Iosevka NF
     # family: mononoki NF
-    family: SauceCodePro NF
-    # family: UbuntuMono NF
+    # family: SauceCodePro NF
     style: Italic
 
-  # Bold italic font face
   bold_italic:
-    # family: FantasqueSansMono NF
+    family: FantasqueSansMono NF
     # family: Hasklug NF
-    # family: Iosevka NF
     # family: mononoki NF
-    family: SauceCodePro NF
-    # family: UbuntuMono NF
+    # family: SauceCodePro NF
     style: Bold Italic
-
-  # for notebook
-  # size: 16.0
 
   #for pc
   size: 13.0
