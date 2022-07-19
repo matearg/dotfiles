@@ -67,8 +67,8 @@ alias fgrep='fgrep --color=auto'
 alias df='df -h'
 
 #keyboard
-alias give-me-azerty-be="sudo localectl set-x11-keymap be"
-alias give-me-qwerty-us="sudo localectl set-x11-keymap us"
+alias give-me-qwerty-es="setxkbmap -layout latam"
+alias give-me-qwerty-us="setxkbmap -layout us"
 
 #pacman unlock
 alias unlock="sudo rm /var/lib/pacman/db.lck"
@@ -231,6 +231,7 @@ alias nv="$EDITOR ~/.config/nvim/init.lua"
 alias nt="$EDITOR ~/github/dotfiles/alacritty.yml"
 alias gg="lazygit"
 alias at="alacritty-themes"
+alias cat="bat"
 
 #reading logs with bat
 alias lcalamares="bat /var/log/Calamares.log"
