@@ -355,9 +355,9 @@ alias personal='cp -Rf /personal/* ~'
 
 [[ -f ~/.zshrc-personal ]] && . ~/.zshrc-personal
 
-# source ~/powerlevel10k/powerlevel10k.zsh-theme
-eval "$(starship init zsh)"
-export STARSHIP_CONFIG=/home/mateo/github/dotfiles/powershell/starship-themes/mvp.toml
+source ~/powerlevel10k/powerlevel10k.zsh-theme
+# eval "$(starship init zsh)"
+# export STARSHIP_CONFIG=/home/mateo/github/dotfiles/powershell/starship-themes/mvp.toml
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
