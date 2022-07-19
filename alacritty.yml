@@ -19,8 +19,8 @@ window:
   decorations: none
 
   # The value `0.0` is completely transparent and `1.0` is opaque.
-  # opacity: 0.95
-  opacity: 1.0
+  opacity: 0.95
+  # opacity: 1.0
   startup_mode: Windowed
   title: Alacritty
   dynamic_title: true
