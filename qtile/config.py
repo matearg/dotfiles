@@ -245,21 +245,21 @@ layouts = [
 ]
 
 # COLORS FOR THE BAR
-#Theme name : ArcoLinux Nord
+#Theme name : ArcoLinux Default
 def init_colors():
-    return [["#3B4252", "#3B4252"], # color 0
-            ["#2e3440", "#2e3440"], # color 1
-            ["#A3BE8C", "#A3BE8C"], # color 2
-            ["#EBCB8B", "#EBCB8B"], # color 3
-            ["#81A1C1", "#81A1C1"], # color 4
-            ["#D8DEE9", "#D8DEE9"], # color 5
-            ["#88C0D0", "#88C0D0"], # color 6
-            ["#E5E9F0", "#E5E9F0"], # color 7
-            ["#4C566A", "#4C566A"], # color 8
-            ["#BF616A", "#BF616A"]] # color 9
+    return [["#2F343F", "#2F343F"], # color 0
+            ["#2F343F", "#2F343F"], # color 1
+            ["#c0c5ce", "#c0c5ce"], # color 2
+            ["#fba922", "#fba922"], # color 3
+            ["#3384d0", "#3384d0"], # color 4
+            ["#f3f4f5", "#f3f4f5"], # color 5
+            ["#cd1f3f", "#cd1f3f"], # color 6
+            ["#62FF00", "#62FF00"], # color 7
+            ["#6790eb", "#6790eb"], # color 8
+            ["#a9a9a9", "#a9a9a9"]] # color 9
 
 
-colors = init_colors()# WIDGETS FOR THE BAR
+colors = init_colors()
 
 def init_widgets_defaults():
     return dict(font="Noto Sans",
