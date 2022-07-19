@@ -1,0 +1,9 @@
+[user]
+    email = mateoarcidiacono@gmail.com
+    name = Mateo Arcidiacono
+[alias]
+    ac = commit -am
+    s = status
+    c = checkout
+    ra = restore *
+    r = restore

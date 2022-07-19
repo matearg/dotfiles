@@ -12,6 +12,10 @@ if [ -f /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.z
   source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 fi
 
+if [ -f /usr/share/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh ]; then
+  source /usr/share/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
+fi
+
 setopt GLOB_DOTS
 #share commands between terminal instances or not
 unsetopt SHARE_HISTORY
@@ -351,7 +355,9 @@ alias personal='cp -Rf /personal/* ~'
 
 [[ -f ~/.zshrc-personal ]] && . ~/.zshrc-personal
 
-source ~/powerlevel10k/powerlevel10k.zsh-theme
+# source ~/powerlevel10k/powerlevel10k.zsh-theme
+eval "$(starship init zsh)"
+export STARSHIP_CONFIG=/home/mateo/github/dotfiles/powershell/starship-themes/mvp.toml
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh

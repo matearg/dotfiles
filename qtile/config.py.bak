@@ -259,7 +259,8 @@ def init_colors():
             ["#BF616A", "#BF616A"]] # color 9
 
 
-colors = init_colors()# WIDGETS FOR THE BAR
+colors = init_colors()
+# WIDGETS FOR THE BAR
 
 def init_widgets_defaults():
     return dict(font="Noto Sans",
@@ -318,12 +319,12 @@ def init_widgets_list():
                         background=colors[1],
                         padding = 0,
                         ),
-               # widget.Sep(
-               #          linewidth = 1,
-               #          padding = 10,
-               #          foreground = colors[2],
-               #          background = colors[1]
-               #          ),
+               widget.Sep(
+                        linewidth = 1,
+                        padding = 10,
+                        foreground = colors[2],
+                        background = colors[1]
+                        ),
                # widget.NetGraph(
                #          font="Noto Sans",
                #          fontsize=12,
@@ -422,21 +423,12 @@ def init_widgets_list():
                #          foreground = colors[5],
                #          background = colors[1],
                #         ),
-               widget.KeyboardLayout(
-                        foreground = colors[5],
-                        background = colors[1],
-                        padding = 0,
-                        fontsize = 12,
-                        max_chars = 2,
-                        configured_keyboards = ['latam', 'us']
-                       ),
-               widget.Sep(
-                        font="FontAwesome",
-                        linewidth = 1,
-                        padding = 10,
-                        foreground = colors[2],
-                        background = colors[1]
-                        ),
+               # widget.Sep(
+               #          linewidth = 1,
+               #          padding = 10,
+               #          foreground = colors[2],
+               #          background = colors[1]
+               #          ),
                widget.TextBox(
                         font="FontAwesome",
                         text="  ",
