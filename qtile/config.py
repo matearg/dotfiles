@@ -241,24 +241,24 @@ layouts = [
     # layout.MonadWide(**layout_theme),
     # layout.Matrix(**layout_theme),
     # layout.Bsp(**layout_theme),
-    layout.Floating(**layout_theme),
+    # layout.Floating(**layout_theme),
     # layout.RatioTile(**layout_theme),
     layout.Max(**layout_theme)
 ]
 
 # COLORS FOR THE BAR
-#Theme name : ArcoLinux Default
+#Theme name : ArcoLinux Crimson
 def init_colors():
-    return [["#2F343F", "#2F343F"], # color 0
-            ["#2F343F", "#2F343F"], # color 1
+    return [["#4a4a46", "#4a4a46"], # color 0
+            ["#4a4a46", "#4a4a46"], # color 1
             ["#c0c5ce", "#c0c5ce"], # color 2
-            ["#fba922", "#fba922"], # color 3
-            ["#3384d0", "#3384d0"], # color 4
-            ["#f3f4f5", "#f3f4f5"], # color 5
-            ["#cd1f3f", "#cd1f3f"], # color 6
+            ["#d33682", "#d33682"], # color 3
+            ["#cf3e3e", "#cf3e3e"], # color 4
+            ["#fdf6e3", "#fdf6e3"], # color 5
+            ["#d42121", "#d42121"], # color 6
             ["#62FF00", "#62FF00"], # color 7
-            ["#6790eb", "#6790eb"], # color 8
-            ["#a9a9a9", "#a9a9a9"]] # color 9
+            ["#cf3e3e", "#cf3e3e"], # color 8
+            ["#eb9b9b", "#eb9b9b"]] # color 9
 
 
 colors = init_colors()
