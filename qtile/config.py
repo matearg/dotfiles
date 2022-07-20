@@ -297,6 +297,13 @@ def init_widgets_list():
                         foreground = colors[2],
                         background = colors[1]
                         ),
+              widget.CurrentLayoutIcon(
+                       custom_icon_paths = [os.path.expanduser("~/.config/qtile/icons/wmicons")],
+                       foreground = colors[2],
+                       background = colors[0],
+                       padding = 0,
+                       scale = 0.7
+                       ),
                widget.CurrentLayout(
                         font="FontAwesome Bold",
                         # font = "Noto Sans Bold",
