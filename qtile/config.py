@@ -34,7 +34,6 @@ from libqtile import layout, bar, widget, hook
 from libqtile.config import Click, Drag, Group, Key, Match, Screen, Rule
 from libqtile.command import lazy
 from libqtile.widget import Spacer
-#import arcobattery
 
 #mod4 or mod = super key
 mod = "mod4"
@@ -218,9 +217,9 @@ for i in groups:
         Key(["mod1", "shift"], "Tab", lazy.screen.prev_group()),
 
 # MOVE WINDOW TO SELECTED WORKSPACE 1-10 AND STAY ON WORKSPACE
-        #Key([mod, "shift"], i.name, lazy.window.togroup(i.name)),
+        Key([mod, "shift"], i.name, lazy.window.togroup(i.name)),
 # MOVE WINDOW TO SELECTED WORKSPACE 1-10 AND FOLLOW MOVED WINDOW TO WORKSPACE
-        Key([mod, "shift"], i.name, lazy.window.togroup(i.name) , lazy.group[i.name].toscreen()),
+        # Key([mod, "shift"], i.name, lazy.window.togroup(i.name) , lazy.group[i.name].toscreen()),
     ])
 
 
@@ -272,7 +271,7 @@ def init_widgets_list():
     # prompt = "{0}@{1} ".format(os.environ["USER"], socket.gethostname())
     prompt = "{0} ".format(os.environ["USER"])
     widgets_list = [
-               widget.GroupBox(
+                widget.GroupBox(
                         font="FontAwesome",
                         fontsize = 16,
                         margin_y = 3,
@@ -289,99 +288,74 @@ def init_widgets_list():
                         foreground = colors[2],
                         background = colors[1]
                         ),
-               widget.Sep(
+                widget.Sep(
                         linewidth = 1,
                         padding = 10,
                         foreground = colors[2],
                         background = colors[1]
                         ),
-               widget.CurrentLayoutIcon(
-                       custom_icon_paths = [os.path.expanduser("~/.config/qtile/icons/wmicons")],
-                       foreground = colors[2],
-                       background = colors[1],
-                       padding = 0,
-                       scale = 0.7
-                       ),
-               widget.CurrentLayout(
+                widget.CurrentLayoutIcon(
+                        custom_icon_paths = [os.path.expanduser("~/.config/qtile/icons/wmicons")],
+                        foreground = colors[2],
+                        background = colors[1],
+                        padding = 0,
+                        scale = 0.7
+                        ),
+                widget.CurrentLayout(
                         font="FontAwesome Bold",
                         foreground = colors[5],
                         background = colors[1]
                         ),
-               widget.Sep(
+                widget.Sep(
                         linewidth = 1,
                         padding = 10,
                         foreground = colors[2],
                         background = colors[1]
                         ),
-               widget.WindowName(
+                widget.WindowName(
                         font="FontAwesome",
                         fontsize = 12,
                         foreground = colors[5],
                         background = colors[1],
                         ),
-               # widget.TextBox(
-               #          # font="FontAwesome Bold",
-               #          font="FontAwesome",
-               #          text="",
-               #          foreground=colors[2],
-               #          background=colors[1],
-               #          padding = 0,
-               #          fontsize=16
-               #          ),
-               # widget.ThermalSensor(
-               #          font="FontAwesome Bold",
-               #          # font="FontAwesome",
-               #          foreground = colors[5],
-               #          foreground_alert = colors[6],
-               #          background = colors[1],
-               #          metric = True,
-               #          padding = 3,
-               #          threshold = 80
-               #          ),
-               # # battery option 1  ArcoLinux Horizontal icons do not forget to import arcobattery at the top
-               # widget.Sep(
-               #          linewidth = 1,
-               #          padding = 10,
-               #          foreground = colors[2],
-               #          background = colors[1]
-               #          ),
-               # arcobattery.BatteryIcon(
-               #          padding=0,
-               #          scale=0.7,
-               #          y_poss=2,
-               #          theme_path=home + "/.config/qtile/icons/battery_icons_horiz",
-               #          update_interval = 5,
-               #          background = colors[1]
-               #          ),
-               # # battery option 2  from Qtile
-               # widget.Sep(
-               #          linewidth = 1,
-               #          padding = 10,
-               #          foreground = colors[2],
-               #          background = colors[1]
-               #          ),
-               # widget.Battery(
-               #          font="Noto Sans",
-               #          update_interval = 10,
-               #          fontsize = 12,
-               #          foreground = colors[5],
-               #          background = colors[1],
-	           #          ),
-               # widget.Sep(
-               #          linewidth = 1,
-               #          padding = 10,
-               #          foreground = colors[2],
-               #          background = colors[1]
-               #          ),
-               widget.TextBox(
-                        font="FontAwesome",
-                        text="  ",
-                        foreground=colors[4],
-                        background=colors[1],
-                        padding = 0,
-                        fontsize=16
-                        ),
-               widget.Memory(
+                # widget.TextBox(
+                #         font="FontAwesome",
+                #         text="",
+                #         foreground=colors[2],
+                #         background=colors[1],
+                #         padding = 0,
+                #         fontsize=16
+                #         ),
+                # widget.ThermalSensor(
+                #         font="FontAwesome Bold",
+                #         foreground = colors[5],
+                #         foreground_alert = colors[6],
+                #         background = colors[1],
+                #         metric = True,
+                #         padding = 3,
+                #         threshold = 80
+                #         ),
+                # battery option 2  from Qtile
+                # widget.Sep(
+                #         linewidth = 1,
+                #         padding = 10,
+                #         foreground = colors[2],
+                #         background = colors[1]
+                #         ),
+                # widget.Battery(
+                #         font="Noto Sans",
+                #         update_interval = 10,
+                #         fontsize = 12,
+                #         foreground = colors[5],
+                #         background = colors[1],
+	            #         ),
+                # widget.Sep(
+                #         linewidth = 1,
+                #         padding = 10,
+                #         foreground = colors[2],
+                #         background = colors[1]
+                #         ),
+                widget.Memory(
                         font="Noto Sans",
                         format = '{MemUsed: .2f} Gb /{MemTotal: .2f} Gb',
                         measure_mem = 'G',
@@ -390,21 +364,21 @@ def init_widgets_list():
                         foreground = colors[5],
                         background = colors[1],
                        ),
-               widget.Sep(
+                widget.TextBox(
+                        font="FontAwesome",
+                        text="  ",
+                        foreground=colors[4],
+                        background=colors[1],
+                        padding = 0,
+                        fontsize=16
+                        ),
+                widget.Sep(
                         linewidth = 1,
                         padding = 10,
                         foreground = colors[2],
                         background = colors[1]
                         ),
-               widget.TextBox(
-                        font="FontAwesome",
-                        text="  ",
-                        foreground=colors[6],
-                        background=colors[1],
-                        padding = 0,
-                        fontsize=16
-                        ),
-               widget.KeyboardLayout(
+                widget.KeyboardLayout(
                         font="FontAwesome Bold",
                         foreground = colors[5],
                         background = colors[1],
@@ -414,46 +388,54 @@ def init_widgets_list():
                         configured_keyboards = ['latam', 'us'],
                         display_map = {'latam': 'LA', 'us': 'US'}
                        ),
-               widget.Sep(
+                # widget.TextBox(
+                #         font="FontAwesome",
+                #         text="  ",
+                #         foreground=colors[6],
+                #         background=colors[1],
+                #         padding = 0,
+                #         fontsize=16
+                #         ),
+                widget.Sep(
                         font="FontAwesome Bold",
                         linewidth = 1,
                         padding = 10,
                         foreground = colors[2],
                         background = colors[1]
                         ),
-               widget.TextBox(
-                        font="FontAwesome",
-                        text="  ",
-                        foreground=colors[4],
-                        background=colors[1],
-                        padding = 0,
-                        fontsize=16
-                        ),
-               widget.Clock(
+                widget.Clock(
                         font="FontAwesome Bold",
                         foreground = colors[5],
                         background = colors[1],
                         fontsize = 12,
                         format="%d-%m-%y %H:%M"
                         ),
-               widget.Sep(
+                # widget.TextBox(
+                #         font="FontAwesome",
+                #         text="  ",
+                #         foreground=colors[4],
+                #         background=colors[1],
+                #         padding = 0,
+                #         fontsize=16
+                #         ),
+                widget.Sep(
                         linewidth = 1,
                         padding = 10,
                         foreground = colors[2],
                         background = colors[1]
                         ),
-               widget.Systray(
+                widget.Systray(
                         background=colors[1],
                         icon_size=20,
                         padding = 4
                         ),
-               widget.Sep(
+                widget.Sep(
                         linewidth = 1,
                         padding = 10,
                         foreground = colors[2],
                         background = colors[1]
                         ),
-               widget.TextBox(
+                widget.TextBox(
                         font="FontAwesome Bold",
                         text= prompt,
                         foreground=colors[6],
@@ -461,7 +443,7 @@ def init_widgets_list():
                         padding = 0,
                         fontsize=16
                         ),
-              ]
+    ]
     return widgets_list
 
 widgets_list = init_widgets_list()
@@ -473,6 +455,9 @@ def init_widgets_screen1():
 
 def init_widgets_screen2():
     widgets_screen2 = init_widgets_list()
+    # del widgets_screen2[8:16]
+    del widgets_screen2[8:10]
+    del widgets_screen2[10:16]
     return widgets_screen2
 
 widgets_screen1 = init_widgets_screen1()
@@ -482,7 +467,7 @@ widgets_screen2 = init_widgets_screen2()
 def init_screens():
     return [
             Screen(top=bar.Bar(widgets=init_widgets_screen1(), size=26, opacity=0.9)),
-            # Screen(top=bar.Bar(widgets=init_widgets_screen2(), size=26, opacity=0.9))
+            Screen(top=bar.Bar(widgets=init_widgets_screen2(), size=26, opacity=0.9))
             ]
 screens = init_screens()
 
