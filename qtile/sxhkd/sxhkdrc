@@ -120,7 +120,7 @@ super + KP_Enter
 	alacritty
 
 #archlinux-tweak-tool
-ctrl + i
+super + i
     archlinux-tweak-tool
 
 
@@ -139,7 +139,7 @@ super + shift + Return
 
 #dmenu
 super + shift + d
-	dmenu_run -i -nb '#191919' -nf '#fea63c' -sb '#fea63c' -sf '#191919' -fn 'NotoMonoRegular:bold:pixelsize=16'
+	dmenu_run -i -nb '#2F343F' -nf '#6790eb' -sb '#6790eb' -sf '#2F343F' -fn 'NotoMonoRegular:bold:pixelsize=18'
 
 #reload sxhkd:
 super + shift + s

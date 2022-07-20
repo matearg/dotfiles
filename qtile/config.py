@@ -154,11 +154,13 @@ keys = [
     Key([mod, "shift"], "Left", lazy.layout.swap_left()),
     Key([mod, "shift"], "Right", lazy.layout.swap_right()),
 
-# TOGGLE FLOATINc LAYOUT
+# TOGGLE FLOATIN LAYOUT
     # Key([mod, "shift"], "space", lazy.window.toggle_floating()),
+
+# CHANGE KEYBOARD LAYOUT
     Key([mod, "shift"], "space", lazy.widget["keyboardlayout"].next_keyboard()),
 
-    ]
+   ]
 
 def window_to_previous_screen(qtile, switch_group=False, switch_screen=False):
     i = qtile.screens.index(qtile.current_screen)
@@ -272,9 +274,10 @@ widget_defaults = init_widgets_defaults()
 def init_widgets_list():
     prompt = "{0}@{1}: ".format(os.environ["USER"], socket.gethostname())
     widgets_list = [
-               widget.GroupBox(font="FontAwesome",
+               widget.GroupBox(
+                        font="FontAwesome",
                         fontsize = 16,
-                        margin_y = -1,
+                        margin_y = 1,
                         margin_x = 0,
                         padding_y = 6,
                         padding_x = 5,
@@ -295,7 +298,8 @@ def init_widgets_list():
                         background = colors[1]
                         ),
                widget.CurrentLayout(
-                        font = "Noto Sans Bold",
+                        font="FontAwesome Bold",
+                        # font = "Noto Sans Bold",
                         foreground = colors[5],
                         background = colors[1]
                         ),
@@ -305,19 +309,20 @@ def init_widgets_list():
                         foreground = colors[2],
                         background = colors[1]
                         ),
-               widget.WindowName(font="Noto Sans",
+               widget.WindowName(
+                        font="FontAwesome",
                         fontsize = 12,
                         foreground = colors[5],
                         background = colors[1],
                         ),
-               widget.Net(
-                        font="Noto Sans",
-                        fontsize=12,
-                        interface="enp0s31f6",
-                        foreground=colors[2],
-                        background=colors[1],
-                        padding = 0,
-                        ),
+               # widget.Net(
+               #          font="FontAwesome",
+               #          fontsize=12,
+               #          interface="enp0s31f6",
+               #          foreground=colors[2],
+               #          background=colors[1],
+               #          padding = 0,
+               #          ),
                # widget.Sep(
                #          linewidth = 1,
                #          padding = 10,
@@ -345,14 +350,25 @@ def init_widgets_list():
                #          background = colors[1]
                #          ),
                # # do not activate in Virtualbox - will break qtile
-               # widget.ThermalSensor(
-               #          foreground = colors[5],
-               #          foreground_alert = colors[6],
-               #          background = colors[1],
-               #          metric = True,
-               #          padding = 3,
-               #          threshold = 80
-               #          ),
+               widget.TextBox(
+                        # font="FontAwesome Bold",
+                        font="FontAwesome",
+                        text="",
+                        foreground=colors[3],
+                        background=colors[1],
+                        padding = 0,
+                        fontsize=16
+                        ),
+               widget.ThermalSensor(
+                        font="FontAwesome Bold",
+                        # font="FontAwesome",
+                        foreground = colors[5],
+                        foreground_alert = colors[6],
+                        background = colors[1],
+                        metric = True,
+                        padding = 3,
+                        threshold = 80
+                        ),
                # # battery option 1  ArcoLinux Horizontal icons do not forget to import arcobattery at the top
                # widget.Sep(
                #          linewidth = 1,
@@ -422,16 +438,35 @@ def init_widgets_list():
                #          foreground = colors[5],
                #          background = colors[1],
                #         ),
+               widget.Sep(
+                        linewidth = 1,
+                        padding = 10,
+                        foreground = colors[2],
+                        background = colors[1]
+                        ),
+               widget.TextBox(
+                        # font="FontAwesome Bold",
+                        font="FontAwesome",
+                        text="  ",
+                        foreground=colors[7],
+                        background=colors[1],
+                        padding = 0,
+                        fontsize=16
+                        ),
                widget.KeyboardLayout(
+                        font="FontAwesome Bold",
+                        # font="FontAwesome",
                         foreground = colors[5],
                         background = colors[1],
                         padding = 0,
                         fontsize = 12,
                         max_chars = 2,
-                        configured_keyboards = ['latam', 'us']
+                        configured_keyboards = ['latam', 'us'],
+                        display_map = {'latam': 'LA', 'us': 'US'}
                        ),
                widget.Sep(
-                        font="FontAwesome",
+                        font="FontAwesome Bold",
+                        # font="FontAwesome",
                         linewidth = 1,
                         padding = 10,
                         foreground = colors[2],
@@ -440,12 +475,14 @@ def init_widgets_list():
                widget.TextBox(
                         font="FontAwesome",
                         text="  ",
-                        foreground=colors[3],
+                        foreground=colors[8],
                         background=colors[1],
                         padding = 0,
                         fontsize=16
                         ),
                widget.Clock(
+                        font="FontAwesome Bold",
+                        # font="FontAwesome",
                         foreground = colors[5],
                         background = colors[1],
                         fontsize = 12,
