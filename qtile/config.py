@@ -136,10 +136,10 @@ keys = [
     # Key([mod, "shift"], "f", lazy.layout.flip()),
 
 # FLIP LAYOUT FOR BSP
-    Key([mod, "mod1"], "k", lazy.layout.flip_up()),
-    Key([mod, "mod1"], "j", lazy.layout.flip_down()),
-    Key([mod, "mod1"], "l", lazy.layout.flip_right()),
-    Key([mod, "mod1"], "h", lazy.layout.flip_left()),
+    # Key([mod, "mod1"], "k", lazy.layout.flip_up()),
+    # Key([mod, "mod1"], "j", lazy.layout.flip_down()),
+    # Key([mod, "mod1"], "l", lazy.layout.flip_right()),
+    # Key([mod, "mod1"], "h", lazy.layout.flip_left()),
 
 # MOVE WINDOWS UP OR DOWN BSP LAYOUT
     Key([mod, "shift"], "k", lazy.layout.shuffle_up()),
@@ -179,8 +179,10 @@ def window_to_next_screen(qtile, switch_group=False, switch_screen=False):
 
 keys.extend([
     # MOVE WINDOW TO NEXT SCREEN
-    Key([mod,"shift"], "Right", lazy.function(window_to_next_screen, switch_screen=True)),
-    Key([mod,"shift"], "Left", lazy.function(window_to_previous_screen, switch_screen=True)),
+    # Key([mod, "shift"], "Left", lazy.function(window_to_next_screen, switch_screen=True)),
+    # Key([mod, "shift"], "Right", lazy.function(window_to_previous_screen, switch_screen=True)),
+    Key([mod, "mod1"], "h", lazy.function(window_to_next_screen, switch_screen=True)),
+    Key([mod, "mod1"], "l", lazy.function(window_to_previous_screen, switch_screen=True)),
 ])
 
 groups = []
@@ -408,7 +410,7 @@ def init_widgets_list():
                         foreground = colors[5],
                         background = colors[1],
                         fontsize = 12,
-                        format="%d-%m-%y %H:%M"
+                        format="%d-%m-%y %H:%M",
                         ),
                 # widget.TextBox(
                 #         font="FontAwesome",
@@ -451,6 +453,7 @@ widgets_list = init_widgets_list()
 
 def init_widgets_screen1():
     widgets_screen1 = init_widgets_list()
+    del widgets_screen1[14:16]
     return widgets_screen1
 
 def init_widgets_screen2():
