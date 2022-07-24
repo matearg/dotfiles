@@ -34,6 +34,7 @@ from libqtile import layout, bar, widget, hook
 from libqtile.config import Click, Drag, Group, Key, Match, Screen, Rule
 from libqtile.command import lazy
 from libqtile.widget import Spacer
+from unicodes import left_arrow, right_arrow
 
 #mod4 or mod = super key
 mod = "mod4"
@@ -193,8 +194,8 @@ group_names = ["1", "2", "3", "4", "5", "6", "7", "8", "9", "0",]
 # FOR AZERTY KEYBOARDS
 #group_names = ["ampersand", "eacute", "quotedbl", "apostrophe", "parenleft", "section", "egrave", "exclam", "ccedilla", "agrave",]
 
-# group_labels = ["1 ", "2 ", "3 ", "4 ", "5 ", "6 ", "7 ", "8 ", "9 ", "0",]
-group_labels = ["", "", "", "", "", "", "", "", "", "",]
+group_labels = ["1 ", "2 ", "3 ", "4 ", "5 ", "6 ", "7 ", "8 ", "9 ", "0",]
+# group_labels = ["", "", "", "", "", "", "", "", "", "",]
 #group_labels = ["Web", "Edit/chat", "Image", "Gimp", "Meld", "Video", "Vb", "Files", "Mail", "Music",]
 
 group_layouts = ["monadtall", "monadtall", "monadtall", "monadtall", "monadtall", "monadtall", "monadtall", "monadtall", "monadtall", "monadtall",]
@@ -275,7 +276,7 @@ def init_widgets_list():
     prompt = "{0} ".format(os.environ["USER"])
     widgets_list = [
                 widget.GroupBox(
-                        font="FontAwesome",
+                        font = "FontAwesome",
                         fontsize = 16,
                         margin_y = 3,
                         margin_x = 0,
@@ -284,53 +285,71 @@ def init_widgets_list():
                         borderwidth = 0,
                         disable_drag = True,
                         active = colors[6],
-                        inactive = colors[5],
+                        inactive = colors[1],
                         rounded = False,
                         highlight_method = "text",
-                        this_current_screen_border = colors[4],
+                        this_current_screen_border = colors[9],
                         foreground = colors[2],
-                        background = colors[1]
+                        background = colors[7]
                         ),
-                widget.Sep(
-                        linewidth = 1,
-                        padding = 10,
-                        foreground = colors[2],
-                        background = colors[1]
-                        ),
+                right_arrow(colors[6], colors[7]),
+                # widget.Sep(
+                #         linewidth = 1,
+                #         padding = 10,
+                #         foreground = colors[2],
+                #         background = colors[1]
+                #         ),
                 widget.CurrentLayoutIcon(
                         custom_icon_paths = [os.path.expanduser("~/.config/qtile/icons/wmicons")],
-                        foreground = colors[2],
-                        background = colors[1],
+                        background = colors[6],
                         padding = 0,
                         scale = 0.7
                         ),
+                widget.TextBox(
+                        font = "FontAwesome Bold",
+                        fontsize = 16,
+                        text = " [",
+                        foreground = "#ffffff",
+                        background = colors[6],
+                        padding = 0,
+                        ),
                 widget.CurrentLayout(
-                        font="FontAwesome Bold",
-                        foreground = colors[5],
-                        background = colors[1]
+                        font = "FontAwesome Bold",
+                        fontsize = 14,
+                        foreground = "#ffffff",
+                        background = colors[6]
                         ),
-                widget.Sep(
-                        linewidth = 1,
-                        padding = 10,
-                        foreground = colors[2],
-                        background = colors[1]
+                widget.TextBox(
+                        font = "FontAwesome Bold",
+                        fontsize = 16,
+                        text = "] ",
+                        foreground = "#ffffff",
+                        background = colors[6],
+                        padding = 0,
                         ),
+                right_arrow(colors[1], colors[6]),
+                # widget.Sep(
+                #         linewidth = 1,
+                #         padding = 10,
+                #         foreground = colors[2],
+                #         background = colors[1]
+                #         ),
                 widget.WindowName(
-                        font="FontAwesome",
-                        fontsize = 12,
+                        font = "FontAwesome Italic",
+                        fontsize = 14,
                         foreground = colors[5],
                         background = colors[1],
                         ),
                 # widget.TextBox(
-                #         font="FontAwesome",
-                #         text="",
-                #         foreground=colors[2],
-                #         background=colors[1],
+                #         font = "FontAwesome",
+                #         text = "",
+                #         foreground = colors[2],
+                #         background = colors[1],
                 #         padding = 0,
-                #         fontsize=16
+                #         fontsize = 16
                 #         ),
                 # widget.ThermalSensor(
-                #         font="FontAwesome Bold",
+                #         font = "FontAwesome Bold",
                 #         foreground = colors[5],
                 #         foreground_alert = colors[6],
                 #         background = colors[1],
@@ -346,7 +365,7 @@ def init_widgets_list():
                 #         background = colors[1]
                 #         ),
                 # widget.Battery(
-                #         font="Noto Sans",
+                #         font = "FontAwesome",
                 #         update_interval = 10,
                 #         fontsize = 12,
                 #         foreground = colors[5],
@@ -358,93 +377,107 @@ def init_widgets_list():
                 #         foreground = colors[2],
                 #         background = colors[1]
                 #         ),
+                left_arrow(colors[1], colors [7]),
                 widget.Memory(
-                        font="Noto Sans",
+                        font = "FontAwesome Bold",
                         format = '{MemUsed: .2f} Gb /{MemTotal: .2f} Gb',
                         measure_mem = 'G',
                         update_interval = 1,
                         fontsize = 12,
-                        foreground = colors[5],
-                        background = colors[1],
+                        foreground = colors[1],
+                        background = colors[7],
                        ),
                 widget.TextBox(
-                        font="FontAwesome",
-                        text="  ",
-                        foreground=colors[4],
-                        background=colors[1],
+                        font = "FontAwesome",
+                        text = "  ",
+                        foreground = colors[1],
+                        background = colors[7],
                         padding = 0,
-                        fontsize=16
+                        fontsize = 16
                         ),
-                widget.Sep(
-                        linewidth = 1,
-                        padding = 10,
-                        foreground = colors[2],
-                        background = colors[1]
-                        ),
+                # widget.Sep(
+                #         linewidth = 1,
+                #         padding = 10,
+                #         foreground = colors[2],
+                #         background = colors[1]
+                #         ),
+                left_arrow(colors[7], colors[6]),
                 widget.KeyboardLayout(
-                        font="FontAwesome Bold",
-                        foreground = colors[5],
-                        background = colors[1],
+                        font = "FontAwesome Bold",
+                        foreground = "#ffffff",
+                        background = colors[6],
                         padding = 0,
                         fontsize = 12,
                         max_chars = 2,
                         configured_keyboards = ['latam', 'us'],
                         display_map = {'latam': 'LA', 'us': 'US'}
                        ),
-                # widget.TextBox(
-                #         font="FontAwesome",
-                #         text="  ",
-                #         foreground=colors[6],
-                #         background=colors[1],
-                #         padding = 0,
-                #         fontsize=16
-                #         ),
-                widget.Sep(
-                        font="FontAwesome Bold",
-                        linewidth = 1,
-                        padding = 10,
-                        foreground = colors[2],
-                        background = colors[1]
+                widget.TextBox(
+                        font = "FontAwesome",
+                        text = "  ",
+                        foreground = "#ffffff",
+                        background = colors[6],
+                        padding = 0,
+                        fontsize = 16
                         ),
+                # widget.Sep(
+                #         font = "FontAwesome Bold",
+                #         linewidth = 1,
+                #         padding = 10,
+                #         foreground = colors[2],
+                #         background = colors[1]
+                #         ),
+                left_arrow(colors[6], colors[7]),
                 widget.Clock(
-                        font="FontAwesome Bold",
-                        foreground = colors[5],
-                        background = colors[1],
+                        font = "FontAwesome Bold",
+                        foreground = colors[1],
+                        background = colors[7],
                         fontsize = 12,
-                        format="%d-%m-%y %H:%M",
-                        ),
-                # widget.TextBox(
-                #         font="FontAwesome",
-                #         text="  ",
-                #         foreground=colors[4],
-                #         background=colors[1],
-                #         padding = 0,
-                #         fontsize=16
-                #         ),
-                widget.Sep(
-                        linewidth = 1,
-                        padding = 10,
-                        foreground = colors[2],
-                        background = colors[1]
-                        ),
-                widget.Systray(
-                        background=colors[1],
-                        icon_size=20,
-                        padding = 4
-                        ),
-                widget.Sep(
-                        linewidth = 1,
-                        padding = 10,
-                        foreground = colors[2],
-                        background = colors[1]
+                        format = "%a %d-%m-%y %H:%M",
                         ),
                 widget.TextBox(
-                        font="FontAwesome Bold",
-                        text= prompt,
-                        foreground=colors[6],
-                        background=colors[1],
+                        font = "FontAwesome",
+                        text = "  ",
+                        foreground = colors[1],
+                        background = colors[7],
                         padding = 0,
-                        fontsize=16
+                        fontsize = 16
+                        ),
+                # widget.Sep(
+                #         linewidth = 1,
+                #         padding = 10,
+                #         foreground = colors[2],
+                #         background = colors[1]
+                #         ),
+                left_arrow(colors[7], colors[6]),
+                widget.Systray(
+                        background = colors[6],
+                        icon_size = 20,
+                        padding = 4
+                        ),
+                # widget.Sep(
+                #         linewidth = 1,
+                #         padding = 10,
+                #         foreground = colors[2],
+                #         background = colors[1]
+                #         ),
+                left_arrow(colors[7], colors[6]),
+                left_arrow(colors[6], colors[1]),
+                widget.TextBox(
+                        font = "FontAwesome Bold",
+                        text = prompt,
+                        foreground = colors[6],
+                        background = colors[1],
+                        padding = 0,
+                        fontsize = 16
+                        ),
+                widget.TextBox(
+                        font = "FontAwesome",
+                        text = "  ",
+                        foreground = colors[6],
+                        background = colors[1],
+                        padding = 0,
+                        fontsize = 16
                         ),
     ]
     return widgets_list
@@ -454,14 +487,13 @@ widgets_list = init_widgets_list()
 
 def init_widgets_screen1():
     widgets_screen1 = init_widgets_list()
-    del widgets_screen1[14:16]
+    del widgets_screen1[19:20]
     return widgets_screen1
 
 def init_widgets_screen2():
     widgets_screen2 = init_widgets_list()
-    # del widgets_screen2[8:16]
-    del widgets_screen2[8:10]
-    del widgets_screen2[10:16]
+    del widgets_screen2[9:15]
+    del widgets_screen2[11:13]
     return widgets_screen2
 
 widgets_screen1 = init_widgets_screen1()
