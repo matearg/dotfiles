@@ -433,7 +433,8 @@ def init_widgets_list():
                         foreground = colors[1],
                         background = colors[7],
                         fontsize = 12,
-                        format = "%a %d-%m-%y %H:%M",
+                        # format = "%a %d/%m/%y %H:%M",
+                        format = "%a %d/%m %H:%M",
                         ),
                 widget.TextBox(
                         font = "FontAwesome",
