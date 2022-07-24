@@ -264,20 +264,20 @@ def init_colors():
 colors = init_colors()
 
 def init_widgets_defaults():
-    return dict(font="Noto Sans",
+    return dict(font = "Hack NF",
                 fontsize = 12,
                 padding = 2,
-                background=colors[1])
+                background = colors[1])
 
 widget_defaults = init_widgets_defaults()
 
 def init_widgets_list():
     # prompt = "{0}@{1} ".format(os.environ["USER"], socket.gethostname())
-    prompt = "{0} ".format(os.environ["USER"])
+    prompt = "{0}".format(os.environ["USER"])
     widgets_list = [
                 widget.GroupBox(
-                        font = "FontAwesome",
-                        fontsize = 16,
+                        font = "Hack NF",
+                        fontsize = 25,
                         margin_y = 3,
                         margin_x = 0,
                         padding_y = 6,
@@ -306,23 +306,23 @@ def init_widgets_list():
                         scale = 0.7
                         ),
                 widget.TextBox(
-                        font = "FontAwesome Bold",
+                        font = "Hack NF Bold",
                         fontsize = 16,
-                        text = " [",
+                        text = "[",
                         foreground = "#ffffff",
                         background = colors[6],
                         padding = 0,
                         ),
                 widget.CurrentLayout(
-                        font = "FontAwesome Bold",
+                        font = "Hack NF Bold",
                         fontsize = 14,
                         foreground = "#ffffff",
                         background = colors[6]
                         ),
                 widget.TextBox(
-                        font = "FontAwesome Bold",
+                        font = "Hack NF Bold",
                         fontsize = 16,
-                        text = "] ",
+                        text = "]",
                         foreground = "#ffffff",
                         background = colors[6],
                         padding = 0,
@@ -334,14 +334,21 @@ def init_widgets_list():
                 #         foreground = colors[2],
                 #         background = colors[1]
                 #         ),
+                widget.TextBox(
+                        font = "Hack NF Bold",
+                        fontsize = 14,
+                        text = " ",
+                        background = colors[1],
+                        padding = 0,
+                        ),
                 widget.WindowName(
-                        font = "FontAwesome Italic",
+                        font = "Hack NF Italic",
                         fontsize = 14,
                         foreground = colors[5],
                         background = colors[1],
                         ),
                 # widget.TextBox(
-                #         font = "FontAwesome",
+                #         font = "Hack NF",
                 #         text = "",
                 #         foreground = colors[2],
                 #         background = colors[1],
@@ -349,7 +356,7 @@ def init_widgets_list():
                 #         fontsize = 16
                 #         ),
                 # widget.ThermalSensor(
-                #         font = "FontAwesome Bold",
+                #         font = "Hack NF Bold",
                 #         foreground = colors[5],
                 #         foreground_alert = colors[6],
                 #         background = colors[1],
@@ -365,7 +372,7 @@ def init_widgets_list():
                 #         background = colors[1]
                 #         ),
                 # widget.Battery(
-                #         font = "FontAwesome",
+                #         font = "Hack NF",
                 #         update_interval = 10,
                 #         fontsize = 12,
                 #         foreground = colors[5],
@@ -379,7 +386,7 @@ def init_widgets_list():
                 #         ),
                 left_arrow(colors[1], colors [7]),
                 widget.Memory(
-                        font = "FontAwesome Bold",
+                        font = "Hack NF Bold",
                         format = '{MemUsed: .2f} Gb /{MemTotal: .2f} Gb',
                         measure_mem = 'G',
                         update_interval = 1,
@@ -403,7 +410,7 @@ def init_widgets_list():
                 #         ),
                 left_arrow(colors[7], colors[6]),
                 widget.KeyboardLayout(
-                        font = "FontAwesome Bold",
+                        font = "Hack NF Bold",
                         foreground = "#ffffff",
                         background = colors[6],
                         padding = 0,
@@ -421,7 +428,7 @@ def init_widgets_list():
                         fontsize = 16
                         ),
                 # widget.Sep(
-                #         font = "FontAwesome Bold",
+                #         font = "Hack NF Bold",
                 #         linewidth = 1,
                 #         padding = 10,
                 #         foreground = colors[2],
@@ -429,10 +436,10 @@ def init_widgets_list():
                 #         ),
                 left_arrow(colors[6], colors[7]),
                 widget.Clock(
-                        font = "FontAwesome Bold",
+                        font = "Hack NF Bold",
                         foreground = colors[1],
                         background = colors[7],
-                        fontsize = 12,
+                        fontsize = 14,
                         # format = "%a %d/%m/%y %H:%M",
                         format = "%a %d/%m %H:%M",
                         ),
@@ -465,7 +472,7 @@ def init_widgets_list():
                 left_arrow(colors[7], colors[6]),
                 left_arrow(colors[6], colors[1]),
                 widget.TextBox(
-                        font = "FontAwesome Bold",
+                        font = "Hack NF Bold",
                         text = prompt,
                         foreground = colors[6],
                         background = colors[1],
@@ -488,13 +495,12 @@ widgets_list = init_widgets_list()
 
 def init_widgets_screen1():
     widgets_screen1 = init_widgets_list()
-    del widgets_screen1[19:20]
+    del widgets_screen1[20:21]
     return widgets_screen1
 
 def init_widgets_screen2():
     widgets_screen2 = init_widgets_list()
-    del widgets_screen2[9:15]
-    del widgets_screen2[11:13]
+    del widgets_screen2[19:21]
     return widgets_screen2
 
 widgets_screen1 = init_widgets_screen1()
