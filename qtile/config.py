@@ -194,9 +194,9 @@ group_names = ["1", "2", "3", "4", "5", "6", "7", "8", "9", "0",]
 # FOR AZERTY KEYBOARDS
 #group_names = ["ampersand", "eacute", "quotedbl", "apostrophe", "parenleft", "section", "egrave", "exclam", "ccedilla", "agrave",]
 
-group_labels = ["1 ", "2 ", "3 ", "4 ", "5 ", "6 ", "7 ", "8 ", "9 ", "0",]
-# group_labels = ["", "", "", "", "", "", "", "", "", "",]
-#group_labels = ["Web", "Edit/chat", "Image", "Gimp", "Meld", "Video", "Vb", "Files", "Mail", "Music",]
+# group_labels = ["1 ", "2 ", "3 ", "4 ", "5 ", "6 ", "7 ", "8 ", "9 ", "0",]
+group_labels = ["", "", "", "", "", "", "", "", "", "",]
+# group_labels = ["Web", "Edit/chat", "Image", "Gimp", "Meld", "Video", "Vb", "Files", "Mail", "Music",]
 
 group_layouts = ["monadtall", "monadtall", "monadtall", "monadtall", "monadtall", "monadtall", "monadtall", "monadtall", "monadtall", "monadtall",]
 # group_layouts = ["monadtall", "matrix", "monadtall", "bsp", "monadtall", "matrix", "monadtall", "bsp", "monadtall", "monadtall",]
@@ -384,16 +384,34 @@ def init_widgets_list():
                 #         foreground = colors[2],
                 #         background = colors[1]
                 #         ),
-                left_arrow(colors[1], colors [7]),
+                left_arrow(colors[1], colors[6]),
+                widget.DF(
+                        font = "Hack NF Bold",
+                        fontsize = 12,
+                        foreground = "#ffffff",
+                        background = colors[6],
+                        format = '{uf} {m}b',
+                        visible_on_warn = False
+                        ),
+                widget.TextBox(
+                        font = "FontAwesome",
+                        text = "  ",
+                        foreground = "#ffffff",
+                        background = colors[6],
+                        padding = 0,
+                        fontsize = 16
+                        ),
+                left_arrow(colors[6], colors [7]),
                 widget.Memory(
                         font = "Hack NF Bold",
-                        format = '{MemUsed: .2f} Gb /{MemTotal: .2f} Gb',
+                        # format = '{MemUsed: .2f} Gb /{MemTotal: .2f} Gb',
+                        format = '{MemUsed: .2f} Gb',
                         measure_mem = 'G',
                         update_interval = 1,
                         fontsize = 12,
                         foreground = colors[1],
                         background = colors[7],
-                       ),
+                        ),
                 widget.TextBox(
                         font = "FontAwesome",
                         text = "  ",
@@ -495,12 +513,12 @@ widgets_list = init_widgets_list()
 
 def init_widgets_screen1():
     widgets_screen1 = init_widgets_list()
-    del widgets_screen1[20:21]
+    del widgets_screen1[23:27]
     return widgets_screen1
 
 def init_widgets_screen2():
     widgets_screen2 = init_widgets_list()
-    del widgets_screen2[19:21]
+    del widgets_screen2[21:27]
     return widgets_screen2
 
 widgets_screen1 = init_widgets_screen1()
