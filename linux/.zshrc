@@ -181,6 +181,7 @@ alias nf="$EDITOR ~/.config/fish/config.fish"
 alias nv="$EDITOR ~/.config/nvim/init.lua"
 alias nt="$EDITOR ~/github/dotfiles/alacritty.yml"
 alias nq="$EDITOR ~/.config/qtile/config.py"
+alias np="$EDITOR ~/.config/qtile/scripts/picom.conf"
 alias gg="lazygit"
 alias at="alacritty-themes"
 alias cat="bat"
@@ -247,7 +248,6 @@ ex ()
   fi
 }
 
-# Change cursor shape for different vi modes
 _fix_cursor() {
    echo -ne '\e[5 q'
 }
@@ -275,11 +275,12 @@ alias personal='cp -Rf /personal/* ~'
 #create a file called .zshrc-personal and put all your personal aliases
 #in there. They will not be overwritten by skel.
 
-[[ -f ~/.zshrc-personal ]] && . ~/.zshrc-personal
+# [[ -f ~/.zshrc-personal ]] && . ~/.zshrc-personal
 
+pfetch
 # source ~/powerlevel10k/powerlevel10k.zsh-theme
 eval "$(starship init zsh)"
-export STARSHIP_CONFIG=/home/mateo/github/dotfiles/linux/starship-themes/mvp.toml
+export STARSHIP_CONFIG=/home/mateo/github/dotfiles/linux/starship-themes/mytheme.toml
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
