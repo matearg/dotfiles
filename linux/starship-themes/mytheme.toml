@@ -33,91 +33,91 @@ error_symbol = "[✗](bold red)"
 disabled = false
 
 [aws]
-# symbol = " "
+symbol = " "
 format = 'via [$symbol]($style)'
 
 [conda]
-# symbol = " "
+symbol = " "
 format = 'via [$symbol]($style)'
 
 [dart]
-# symbol = " "
+symbol = " "
 format = 'via [$symbol]($style)'
 
 [docker_context]
-# symbol = " "
+symbol = " "
 format = 'via [$symbol]($style)'
 
 [elixir]
-# symbol = " "
+symbol = " "
 format = 'via [$symbol]($style)'
 
 [elm]
-# symbol = " "
+symbol = " "
 format = 'via [$symbol]($style)'
 
 [git_branch]
 symbol = " "
 
 [golang]
-# symbol = " "
+symbol = " "
 format = 'via [$symbol]($style)'
 
 [hg_branch]
 symbol = " "
 
 [java]
-# symbol = " "
+symbol = " "
 format = 'via [$symbol]($style)'
 
 [julia]
-# symbol = " "
+symbol = " "
 format = 'via [$symbol]($style)'
 
 [nim]
-# symbol = " "
+symbol = " "
 format = 'via [$symbol]($style)'
 
 [nix_shell]
-# symbol = " "
+symbol = " "
 format = 'via [$symbol]($style)'
 
 [nodejs]
-# symbol = " "
+symbol = " "
 format = 'via [$symbol]($style)'
 
 [package]
-# symbol = " "
+symbol = " "
 format = 'via [$symbol]($style)'
 
 [perl]
-# symbol = " "
+symbol = " "
 format = 'via [$symbol]($style)'
 
 [php]
-# symbol = " "
+symbol = " "
 format = 'via [$symbol]($style)'
 
 [python]
-# symbol = " "
+symbol = " "
 format = 'via [$symbol]($style)'
 
 [ruby]
-# symbol = " "
+symbol = " "
 format = 'via [$symbol]($style)'
 
 [rust]
-# symbol = " "
+symbol = " "
 format = 'via [$symbol]($style)'
 
 [swift]
-# symbol = "ﯣ "
+symbol = "ﯣ "
 format = 'via [$symbol]($style)'
 
 [lua]
-# symbol = " "
+symbol = " "
 format = 'via [$symbol]($style)'
 
 [c]
-# symbol = " "
+symbol = " "
 format = 'via [$symbol]($style)'
