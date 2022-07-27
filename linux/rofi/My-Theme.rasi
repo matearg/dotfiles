@@ -1,0 +1,86 @@
+configuration {
+  display-run: " :";
+  display-drun: " :";
+  display-window: "Windows: ";
+  drun-display-format: "{icon} {name}";
+  modi: "window,run,drun";
+  font: "Iosevka Nerd Font 15";
+  show-icons: false;
+  icon-theme: "Sardi Orb Colora";
+}
+
+* {
+  rosewater: #F5E0DC;
+  flamingo:  #eebebe;
+  pink:      #F5C2E7;
+  mauve:     #DDB6F2;
+  red:       #F28FAD;
+  maroon:    #E8A2AF;
+  peach:     #F8BD96;
+  yellow:    #FAE3B0;
+  green:     #ABE9B3;
+  teal:      #B5E8E0;
+  sky:       #89DCEB;
+  sapphire:  #85c1dc;
+  blue:      #96CDFB;
+  lavender:  #C9CBFF;
+
+  text:      #D9E0EE;
+  base:      #30344622;
+  inactive:  #73799455;
+
+  background-color: @base;
+
+  border: 0;
+  margin: 0;
+  padding: 0;
+  spacing: 0;
+}
+
+window {
+  width: 45%;
+  border-radius: 8px;
+}
+
+element {
+  padding: 8;
+  text-color: @text;
+  border-radius: 8px;
+}
+
+element selected {
+  text-color: @mauve;
+  background-color: @inactive;
+}
+
+element-text {
+  background-color: #00000000;
+  text-color: inherit;
+  vertical-align: 0.5;
+}
+
+element-icon {
+  size: 30;
+}
+
+entry {
+  background-color: @base;
+  padding: 12;
+  text-color: @text;
+}
+
+prompt {
+  background-color: @base;
+  padding: 12;
+  text-color: @text;
+}
+
+inputbar {
+  children: [prompt, entry];
+}
+
+listview {
+  background-color: @base;
+  columns: 1;
+  lines: 8;
+}
