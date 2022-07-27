@@ -33,22 +33,47 @@ scrolling:
 # Font configuration
 font:
   normal:
-    family: Hack Nerd Font
+    # THIS NEED SIZE 13.0
+    # family: Hack Nerd Font Mono 
+    # family: JetBrainsMono Nerd Font Mono 
+    # THIS NEED SIZE 14.0
+    # family: mononoki Nerd Font Mono 
+    # family: Iosevka Nerd Font Mono 
+    family: FantasqueSansMono Nerd Font Mono 
     style: Regular
 
   bold:
-    family: Hack Nerd Font
+    # THIS NEED SIZE 13.0
+    # family: Hack Nerd Font Mono 
+    # family: JetBrainsMono Nerd Font Mono 
+    # THIS NEED SIZE 14.0
+    # family: mononoki Nerd Font Mono 
+    # family: Iosevka Nerd Font Mono 
+    family: FantasqueSansMono Nerd Font Mono 
     style: Bold
 
   italic:
-    family: Hack Nerd Font
+    # THIS NEED SIZE 13.0
+    # family: Hack Nerd Font Mono 
+    # family: JetBrainsMono Nerd Font Mono 
+    # THIS NEED SIZE 14.0
+    # family: mononoki Nerd Font Mono 
+    # family: Iosevka Nerd Font Mono 
+    family: FantasqueSansMono Nerd Font Mono 
     style: Italic
 
   bold_italic:
-    family: Hack Nerd Font
+    # THIS NEED SIZE 13.0
+    # family: Hack Nerd Font Mono 
+    # family: JetBrainsMono Nerd Font Mono 
+    # THIS NEED SIZE 14.0
+    # family: mononoki Nerd Font Mono 
+    # family: Iosevka Nerd Font Mono 
+    family: FantasqueSansMono Nerd Font Mono 
     style: Bold Italic
 
-  size: 12.0
+  # size: 13.0
+  size: 14.0
 
   # offset:
   #   x: 0
