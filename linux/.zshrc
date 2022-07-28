@@ -1,17 +1,12 @@
-if [ -f /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh ]; then
-  source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
-fi
-
-if [ -f /usr/share/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh ]; then
-  source /usr/share/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
-fi
+export HISTORY_IGNORE="(ls|cd|pwd|exit|sudo reboot|history|cd -|cd ..)"
+export MANPAGER="sh -c 'col -bx | bat -l man -p'"
 
 setopt GLOBDOTS
 setopt SHARE_HISTORY
 setopt HISTIGNOREDUPS
 HISTSIZE=1000
 SAVEHIST=1000
-HISTFILE=~/.zsh_history
+HISTFILE=/home/mateo/.zsh_history
 
 # If not running interactively, don't do anything
 [[ $- != *i* ]] && return
@@ -167,6 +162,16 @@ _fix_cursor() {
 
 precmd_functions+=(_fix_cursor)
 
+if [ -f /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh ]; then
+  source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+fi
+
+if [ -f /usr/share/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh ]; then
+  source /usr/share/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
+fi
+
 # neofetch
+# pfetch
+# colorscript random
 eval "$(starship init zsh)"
 export STARSHIP_CONFIG=/home/mateo/github/dotfiles/linux/starship-themes/mytheme.toml
