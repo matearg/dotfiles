@@ -6,8 +6,9 @@ if [ -f /usr/share/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh ]; th
   source /usr/share/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
 fi
 
-setopt GLOB_DOTS
+setopt GLOBDOTS
 setopt SHARE_HISTORY
+setopt HISTIGNOREDUPS
 HISTSIZE=1000
 SAVEHIST=1000
 HISTFILE=~/.zsh_history
@@ -16,7 +17,6 @@ HISTFILE=~/.zsh_history
 [[ $- != *i* ]] && return
 
 # Make neovim the default editor
-
 export EDITOR='nvim'
 export VISUAL='nvim'
 
@@ -29,7 +29,6 @@ if [ -d "$HOME/.local/bin" ] ;
 fi
 
 ### ALIASES ###
-
 #list
 alias ls='lsd -alFh --color=auto'
 alias la='lsd -alFh --color=auto'
@@ -129,9 +128,15 @@ alias sr="sudo reboot"
 #give the list of all installed desktops - xsessions desktops
 alias xd="ls /usr/share/xsessions"
 
-# # ex = EXtractor for all kinds of archives
-# # usage: ex <file>
-ex ()
+#colorpicker
+alias color="colorpicker --short --one-shot"
+
+#remove
+alias rmgitcache="rm -r ~/.cache/git"
+
+# # extract = EXtractor for all kinds of archives
+# # usage: extract <file>
+extract ()
 {
   if [ -f $1 ] ; then
     case $1 in
@@ -162,9 +167,6 @@ _fix_cursor() {
 
 precmd_functions+=(_fix_cursor)
 
-#remove
-alias rmgitcache="rm -r ~/.cache/git"
-
-pfetch
+# neofetch
 eval "$(starship init zsh)"
 export STARSHIP_CONFIG=/home/mateo/github/dotfiles/linux/starship-themes/mytheme.toml
