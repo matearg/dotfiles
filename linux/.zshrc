@@ -24,8 +24,7 @@ if [ -d "$HOME/.local/bin" ] ;
 fi
 
 ### ALIASES ###
-#list
-alias ls='lsd -alFh --color=auto'
+alias ls='lsd -lFh --color=auto'
 alias la='lsd -alFh --color=auto'
 alias ll='lsd -alFh --color=auto'
 alias l='ls'
@@ -172,6 +171,7 @@ fi
 
 # neofetch
 # pfetch
-# colorscript random
+colorscript random
+# alsi -l
 eval "$(starship init zsh)"
-export STARSHIP_CONFIG=/home/mateo/github/dotfiles/linux/starship-themes/mytheme.toml
+export STARSHIP_CONFIG=/home/mateo/github/dotfiles/linux/starship-themes/mvp.toml
